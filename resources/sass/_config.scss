@@ -1,0 +1,68 @@
+// USER VARIABLES SECTION
+
+$bluecolor: #64B4E5; // Blue Color
+$bluehovercolor: #8BC7EC; // Blue Hover Color
+$lightbluecolor: #86C9C0; // Light Blue Color
+$accentcolor: #ED6D1F; // Accent Color
+$lightaccentcolor: #F6B68F; // Light Accent Color
+$greycolor: #868686; // Grey Color
+$lightgreycolor: #B9B9B9; // #EDEDED // Light Grey Color
+$secondlightgreycolor: #D9D9D9; // #B9B9B9 // Second Light Grey Color
+$secondlightbluecolor: #E0F1EF; // Second Light Blue Color
+$thirdlightgreycolor: #EDEDED; // Third Light Grey Color
+$fontsize: 16px; // Font Size
+$lineheight: 1.6; // Document Line Height
+$userfont: 'roboto-condensed', sans-serif; // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 24px;
+$gutter: $grid-gutter-width;
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: url($furl) format('woff2');
+  }
+}
+
+@include font('roboto-condensed-light', normal, 400, '../../public/fonts/roboto-condensed-light.woff2');
+@include font('roboto-condensed', normal, 400, '../../public/fonts/roboto-condensed.woff2');
+@include font('roboto-condensed-medium', normal, 400, '../../public/fonts/roboto-condensed-medium.woff2');
+@include font('roboto-condensed-bold', normal, 400, '../../public/fonts/roboto-condensed-bold.woff2');
+
+// GENERAL DOCUMENT STYLES
+
+// ::placeholder
+//   color: #7f7f7f
+
+* {
+  box-sizing: border-box;
+}
+
+input, textarea {
+  outline: none;
+}
+
+html {
+  font-size: $fontsize;
+}
+
+body {
+  font-family: $userfont;
+  line-height: $lineheight;
+  color: $greycolor;
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}

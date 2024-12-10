@@ -1,0 +1,270 @@
+/* button flex container */
+.dashboard-content .button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* form */
+.form-group .form-label {
+  font-weight: 600;
+}
+.form-group textarea {
+  resize: none;
+}
+
+
+/* Прикрепить файл */
+.inputfile {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.custom-inputfile-label {
+  height: 38px;
+  padding: 7px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  color: #212529;
+  background-color: #e9ecef;
+}
+.custom-inputfile-label:hover {
+  background-color: #dde0e3;
+}
+.namefile {
+  margin-left: 10px;
+}
+.inputtext {
+  height: 300px;
+}
+.input-number {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.input-number::-webkit-inner-spin-button,
+.input-number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.sort-input {
+  width: 100px;
+}
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.label-text {
+  margin-bottom: .5rem;
+  font-weight: 700;
+}
+
+
+/* Таблица */
+.table .number-column {
+  /* width: 20px; */
+  width: 45px;
+}
+.table .button-column {
+  width: 155px;
+}
+.table .button-group {
+  font-size: 0;
+}
+.table .button-group .btn {
+  margin: 0 0 0 4px;
+}
+.table .name-column {
+  width: 45%;
+}
+.table .table-button .form {
+  display: contents;
+}
+
+/* Страница Акции */
+.promo-image {
+  width: 100px;
+}
+.promo-image img {
+  width: 100%;
+}
+
+
+/* show */
+.show-item__image {
+  width: 300px;
+}
+.show-item__image img {
+  width: 100%;
+}
+
+/* image preview */
+.image-preview img {
+  display: inline-block;
+  margin: 0 0 10px 0;
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
+}
+.gallery-delete {
+  width: 120px;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+/* Отзывы */
+.testimonials-wrapper .item {
+  position: relative;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+.testimonials-wrapper .item-text {
+  padding: 0 0 1rem 0;
+}
+.testimonials-wrapper .publicate-btn {
+  display: block;
+  margin: 0 0 0 auto;
+}
+.testimonials-wrapper .rm-testimonial-form {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+}
+.archive .title {
+  font-weight: bold;
+}
+.archive .delete-btn {
+  color: red;
+}
+.archive .list-btn {
+  margin: 0 0 0 10px;
+}
+
+/* Заказы */
+.orders-table-row {
+  transition: background-color .2s;
+}
+.orders-table-row:hover {
+  background-color: rgba(255,255,255,0.7);
+}
+.orders-table-row a:hover {
+  text-decoration: underline;
+}
+
+/* Заказ */
+.order-edit .form-select {
+  width: 200px;
+}
+
+/* pagination pager */
+.pager {
+  display: flex;
+  margin: 0 0 50px 0;
+}
+.pager .pager-item {
+  min-width: 42px;
+  height: 42px;
+  margin: 0 8px;
+  padding: 5px 15px;
+  border-radius: 21px;
+  background-color: lightgrey;
+  font-family: inherit;
+  font-size: 20px;
+  list-style: none;
+  transition: all .3s;
+}
+.pager .pager-item:hover:not(.disabled) {
+  background-color: grey;
+}
+.pager .pager-item.active {
+  background-color: grey;
+}
+.pager .pager-item-link,
+.pager .pager-item-span {
+  display: block;
+  min-width: 12px;
+  color: #212529;
+}
+.pager .pager-item.active .pager-item-link,
+.pager .pager-item.active .pager-item-span {
+  color: #fff;
+}
+.pager .pager-item:hover .pager-item-link,
+.pager .pager-item:hover .pager-item-span {
+  color: #fff;
+}
+.pager .pager-item-nav {
+  position: relative;
+}
+.pager .pager-item-nav .pager-item-link {
+  padding: 15px 0;
+}
+.pager .pager-item .arrow-right,
+.pager .pager-item .arrow-left {
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: #363636;
+  transition: background-color .3s;
+}
+.pager .pager-item-nav:hover .arrow-right,
+.pager .pager-item-nav:hover .arrow-left {
+  background-color: #fff;
+}
+.pager .pager-item-nav:hover .arrow-right::before,
+.pager .pager-item-nav:hover .arrow-right::after,
+.pager .pager-item-nav:hover .arrow-left::before,
+.pager .pager-item-nav:hover .arrow-left::after {
+  background-color: #fff;
+}
+.pager .pager-item .arrow-right::before,
+.pager .pager-item .arrow-right::after,
+.pager .pager-item .arrow-left::before,
+.pager .pager-item .arrow-left::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: #363636;
+  transition: background-color .3s;
+}
+.pager .pager-item .arrow-right::before,
+.pager .pager-item .arrow-right::after {
+  right: -2px;
+}
+.pager .pager-item .arrow-right::before {
+  top: -3px;
+  transform: rotate(45deg);
+}
+.pager .pager-item .arrow-right::after {
+  top: 3px;
+  transform: rotate(-45deg);
+}
+.pager .pager-item .arrow-left::before,
+.pager .pager-item .arrow-left::after {
+  left: -2px;
+}
+.pager .pager-item .arrow-left::before {
+  top: -3px;
+  transform: rotate(-45deg);
+}
+.pager .pager-item .arrow-left::after {
+  top: 3px;
+  transform: rotate(45deg);
+}
+@media only screen and (max-width : 768px) {
+  .pager .pager-item {
+    min-width: 36px;
+    height: 36px;
+    padding: 4px 12px;
+    border-radius: 18px;
+    font-size: 18px;
+  }
+}
