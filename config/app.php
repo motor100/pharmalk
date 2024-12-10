@@ -142,8 +142,8 @@ return [
         /*
          * Custom Application Service Providers...
          */
-        App\Providers\RouteServiceProvider::class,
-        App\Providers\ViewServiceProvider::class,
+        // App\Providers\RouteServiceProvider::class,
+        // App\Providers\ViewServiceProvider::class,
 
     ])->toArray(),
 
