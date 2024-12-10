@@ -61,6 +61,13 @@
             </a>
           </div>
 
+          <div class="nav-item">
+            <a href="/admin/users" class="item-link">
+              <i class="nav-icon nav-icon fas fa-user"></i>
+              <span>Пользователи</span>
+            </a>
+          </div>
+
         </div>
       </div>
       
