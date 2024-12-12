@@ -1,15 +1,17 @@
 // USER VARIABLES SECTION
 
-$bluecolor: #64B4E5; // Blue Color
-$bluehovercolor: #8BC7EC; // Blue Hover Color
-$lightbluecolor: #86C9C0; // Light Blue Color
-$accentcolor: #ED6D1F; // Accent Color
-$lightaccentcolor: #F6B68F; // Light Accent Color
-$greycolor: #868686; // Grey Color
-$lightgreycolor: #B9B9B9; // #EDEDED // Light Grey Color
-$secondlightgreycolor: #D9D9D9; // #B9B9B9 // Second Light Grey Color
-$secondlightbluecolor: #E0F1EF; // Second Light Blue Color
-$thirdlightgreycolor: #EDEDED; // Third Light Grey Color
+$textcolor: #222222; // Text Color
+$voodoocolor: #43314B; // Voodooo Color
+$nerocolor: #FFFFFF; // Nero Color
+$wildwillowcolor: #C2D279; // Wild Willow Color
+$sharkcolor: #212529; // Shark Color
+$rarebeigecolor: #DFE9B2; // Rare Beige Color
+$raregreycolor: #677482; // Rare Grey Color
+$mineshaftcolor: #333333; // Mine Shaft Color
+$whiterockcolor: #EDE8D9; // White Rock Color
+$terracotacolor: #E06752; // Terracota Color
+$buildercolor: #777777; // Builder Color
+$oslogreycolor: #7C8B8D; // Oslo Grey Color
 $fontsize: 16px; // Font Size
 $lineheight: 1.6; // Document Line Height
 $userfont: 'roboto-condensed', sans-serif; // User Font Family
@@ -34,10 +36,9 @@ $gutter: $grid-gutter-width;
   }
 }
 
-@include font('roboto-condensed-light', normal, 400, '../../public/fonts/roboto-condensed-light.woff2');
-@include font('roboto-condensed', normal, 400, '../../public/fonts/roboto-condensed.woff2');
-@include font('roboto-condensed-medium', normal, 400, '../../public/fonts/roboto-condensed-medium.woff2');
-@include font('roboto-condensed-bold', normal, 400, '../../public/fonts/roboto-condensed-bold.woff2');
+@include font('interdisplay-regular', normal, 400, '../../public/fonts/InterDisplay-Regular.woff2');
+// @include font('interdisplay-condensed-medium', normal, 400, '../../public/fonts/roboto-condensed-medium.woff2');
+// @include font('interdisplay-condensed-bold', normal, 400, '../../public/fonts/roboto-condensed-bold.woff2');
 
 // GENERAL DOCUMENT STYLES
 
@@ -59,7 +60,7 @@ html {
 body {
   font-family: $userfont;
   line-height: $lineheight;
-  color: $greycolor;
+  color: $textcolor;
   max-width: 1920px;
   min-width: 320px;
   margin: 0 auto;

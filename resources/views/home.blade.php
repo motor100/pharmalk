@@ -4,5 +4,5 @@
 
 @section('content')
 
-<p>111</p>
+
 @endsection
