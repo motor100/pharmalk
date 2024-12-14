@@ -82,6 +82,9 @@ p {
   padding: 60px 40px;
   border-radius: 30px;
   background-color: $voodoocolor;
+  .aside-nav-top {
+    margin: 0 0 240px 0;
+  }
   .nav-item {
     position: relative;
     display: flex;
@@ -91,11 +94,25 @@ p {
     background-color: $nerocolor;
     align-items: center;
   }
+  .nav-item.active {
+    background-color: $wildwillowcolor;
+  }
   .nav-item__image {
     width: 28px;
     margin: 0 10px 0 0;
   }
   .nav-item__image img {
     width: 100%;
+  }
+  .arrow-right {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    bottom: 0;
+    display: none;
+    margin: auto 0;
+  }
+  .nav-item.active .arrow-right {
+    display: block;
   }
 }

@@ -17,29 +17,46 @@
               <div class="nav-item">
                 <img class="nav-item__image" src="/img/home.svg" alt="">
                 <div class="nav-item__text">Главная</div>
+                <img src="/img/arrow-right.svg" class="arrow-right" alt="">
                 <a href="/" class="full-link"></a>
               </div>
               <div class="nav-item">
                 <img class="nav-item__image" src="/img/user.svg" alt="">
                 <div class="nav-item__text">Мой профиль</div>
+                <img src="/img/arrow-right.svg" class="arrow-right" alt="">
                 <a href="/profile" class="full-link"></a>
               </div>
               <div class="nav-item">
                 <img class="nav-item__image" src="/img/clock.svg" alt="">
                 <div class="nav-item__text">История заказов</div>
+                <img src="/img/arrow-right.svg" class="arrow-right" alt="">
                 <a href="/orders" class="full-link"></a>
               </div>
               <div class="nav-item">
                 <img class="nav-item__image" src="/img/ticket.svg" alt="">
                 <div class="nav-item__text">Купоны</div>
+                <img src="/img/arrow-right.svg" class="arrow-right" alt="">
                 <a href="/coupons" class="full-link"></a>
               </div>
               <div class="nav-item">
-                <img class="nav-item__image" src="/img/ticket.svg" alt="">
+                <img class="nav-item__image" src="/img/bell.svg" alt="">
                 <div class="nav-item__text">Уведомления</div>
+                <img src="/img/arrow-right.svg" class="arrow-right" alt="">
                 <a href="/notifications" class="full-link"></a>
               </div>
-            
+            </div>
+            <div class="aside-nav-bottom">
+              <div class="nav-item">
+                <img class="nav-item__image" src="/img/hard-drives.svg" alt="">
+                <div class="nav-item__text">База знаний</div>
+                <a href="#" class="full-link"></a>
+              </div>
+              <div class="nav-item">
+                <img class="nav-item__image" src="/img/info.svg" alt="">
+                <div class="nav-item__text">Поддержка</div>
+                <a href="#" class="full-link"></a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-9 col-md-12">
