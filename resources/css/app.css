@@ -62,7 +62,7 @@ body {
     font-family: 'interdisplay-semibold';
     color: #5C5C5C;
 }
-.login-btn {
+.primary-btn {
     display: block;
     width: 400px;
     height: 53px;
@@ -70,10 +70,12 @@ body {
     background-color: #C2D279;
     color: #222222;
 }
-.login-btn:hover {
+.primary-btn:hover,
+.primary-btn:active,
+.primary-btn:focus {
     background-color: #C2D279 !important;
 }
-.home-btn {
+.secondary-btn {
     display: flex;
     width: 400px;
     height: 53px;

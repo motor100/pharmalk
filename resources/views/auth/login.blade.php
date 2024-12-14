@@ -33,7 +33,7 @@
         </div>
 
         <div class="mb-6">
-            <x-primary-button class="ms-3 login-btn">
+            <x-primary-button class="ms-3 primary-btn">
                 {{ __('Войти') }}
             </x-primary-button>
         </div>
@@ -47,5 +47,5 @@
         @endif
     </form>
 
-    <a href="https://natura-pharma.ru" class="home-btn">Вернуться на главную страницу</a>
+    <a href="https://natura-pharma.ru" class="secondary-btn">Вернуться на главную страницу</a>
 </x-guest-layout>
