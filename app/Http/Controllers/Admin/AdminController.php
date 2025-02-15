@@ -9,6 +9,9 @@ class AdminController extends Controller
 {
     public function home(): View
     {
-        return view('dashboard.home');
+        // dd(\Illuminate\Support\Facades\Auth::user());
+        
+        // return view('dashboard.home'); // это админ панель
+        return view('home');
     }
 }

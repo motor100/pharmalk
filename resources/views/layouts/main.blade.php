@@ -50,12 +50,12 @@
               <div class="nav-item">
                 <img class="nav-item__image" src="/img/hard-drives.svg" alt="">
                 <div class="nav-item__text">База знаний</div>
-                <a href="#" class="full-link"></a>
+                <a href="/knowledge-base" class="full-link"></a>
               </div>
               <div class="nav-item">
                 <img class="nav-item__image" src="/img/info.svg" alt="">
                 <div class="nav-item__text">Поддержка</div>
-                <a href="#" class="full-link"></a>
+                <a href="/support" class="full-link"></a>
               </div>
             </div>
           </div>

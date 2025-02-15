@@ -5,13 +5,26 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 
 Route::get('/', function () {
-    // return view('welcome');
     return redirect('/login');
 })->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [MainController::class, 'home'])->name('dashboard');
+
+    Route::get('/orders', [MainController::class, 'orders']);
+
+    Route::get('/coupons', [MainController::class, 'coupons']);
+
+    Route::get('/notifications', [MainController::class, 'notifications']);
+
+    Route::get('/knowledge-base', [MainController::class, 'knowledge_base']);
+
+    Route::get('/support', [MainController::class, 'support']);
+});
 
 // Route::get('/', [MainController::class, 'home'])->name('home');
 

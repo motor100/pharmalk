@@ -83,7 +83,8 @@
               <div class="user-image">
                 <i class="far fa-user"></i>
               </div>
-              <div class="user-name">{{ Auth::guard('admin')->user()->name }}</div>
+              <!-- <div class="user-name">{{-- Auth::guard('admin')->user()->name --}}</div> -->
+              <div class="user-name">{{ Auth::user()->name }}</div>
             </div>
           </div>
         </div>
