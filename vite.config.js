@@ -15,4 +15,12 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern',
+                additionalData: '@use "_config.scss" as *;'
+            }
+        }
+    },
 });

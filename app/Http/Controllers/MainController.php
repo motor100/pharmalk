@@ -55,7 +55,7 @@ class MainController extends Controller
      */   
     public function knowledge_base(): View
     {
-        return view('knowledge_base');
+        return view('knowledge-base');
     }
 
     /**

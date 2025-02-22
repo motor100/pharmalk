@@ -4,7 +4,14 @@
 
 @section('content')
 
-<p>История заказов</p>
+<div class="orders-page">
+
+  <div class="page-title-wrapper">
+    <div class="page-title">История заказов</div>
+    @include('logout-form')
+  </div>
+
+</div>
 
 <script>
   const menuItem = 2;

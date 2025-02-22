@@ -1,15 +1,17 @@
-@section('title', 'Личный кабинет')
+@section('title', 'Главная')
 
 @extends('layouts.main')
 
 @section('content')
 
-<p>Главная</p>
+<div class="home-page">
+  
+  <div class="page-title-wrapper">
+    <div class="page-title">Главная</div>
+    @include('logout-form')
+  </div>
 
-<form class="form" action="{{ route('logout') }}" method="POST">
-  @csrf
-  <button class="logout-btn">Выйти</button>
-</form>
+</div>
 
 <script>
   const menuItem = 0;

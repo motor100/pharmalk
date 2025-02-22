@@ -1,7 +1,10 @@
 // USER VARIABLES SECTION
 
 $textcolor: #222222; // Text Color
-$voodoocolor: #43314B; // Voodooo Color
+$bgcolor: #F6F7F5; // Background Color
+$secondgreycolor: #5C5C5C; // Second Grey Color
+$placeholdercolor: #BEBEBE; // Placeholder Color
+$voodoocolor: #43314B; // Voodoo Color
 $nerocolor: #FFFFFF; // Nero Color
 $wildwillowcolor: #C2D279; // Wild Willow Color
 $sharkcolor: #212529; // Shark Color
@@ -14,7 +17,7 @@ $buildercolor: #777777; // Builder Color
 $oslogreycolor: #7C8B8D; // Oslo Grey Color
 $fontsize: 16px; // Font Size
 $lineheight: 1.6; // Document Line Height
-$userfont: 'roboto-condensed', sans-serif; // User Font Family
+$userfont: 'interdisplay-regular', sans-serif; // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
 
 // Bootstrap compatible gutter variable => $gutter
@@ -23,7 +26,7 @@ $gutter: $grid-gutter-width;
 
 // IMPORT SECTION
 
-@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
 
 // FONTS LOAD SECTION
 
@@ -37,13 +40,14 @@ $gutter: $grid-gutter-width;
 }
 
 @include font('interdisplay-regular', normal, 400, '../../public/fonts/InterDisplay-Regular.woff2');
-// @include font('interdisplay-condensed-medium', normal, 400, '../../public/fonts/roboto-condensed-medium.woff2');
+@include font('interdisplay-medium', normal, 400, '../../public/fonts/InterDisplay-Medium.woff2');
 // @include font('interdisplay-condensed-bold', normal, 400, '../../public/fonts/roboto-condensed-bold.woff2');
 
 // GENERAL DOCUMENT STYLES
 
-// ::placeholder
-//   color: #7f7f7f
+::placeholder {
+  color: $placeholdercolor;
+}
 
 * {
   box-sizing: border-box;
@@ -66,4 +70,5 @@ body {
   margin: 0 auto;
   position: relative;
   overflow-x: hidden;
+  background-color: $bgcolor;
 }

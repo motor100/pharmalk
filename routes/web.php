@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\AjaxController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -24,6 +25,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/knowledge-base', [MainController::class, 'knowledge_base']);
 
     Route::get('/support', [MainController::class, 'support']);
+
+    // Ajax
+    Route::get('/ajax/aside-nav-set-active', [AjaxController::class, 'aside_nav_set_active']);
+
+    Route::get('/ajax/aside-nav-remove-active', [AjaxController::class, 'aside_nav_remove_active']);
 });
 
 // Route::get('/', [MainController::class, 'home'])->name('home');

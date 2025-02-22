@@ -47,5 +47,5 @@
         @endif
     </form>
 
-    <a href="https://natura-pharma.ru" class="secondary-btn">Вернуться на главную страницу</a>
+    <a href="https://natura-pharma.ru" class="secondary-btn">На главную страницу</a>
 </x-guest-layout>
