@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\CouponController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -18,7 +19,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/orders', [MainController::class, 'orders']);
 
-    Route::get('/coupons', [MainController::class, 'coupons']);
+    // Coupons
+    Route::get('/coupons', [CouponController::class, 'index'])->name('coupons');
+
+    Route::get('/coupons/create', [CouponController::class, 'create'])->name('coupons-create');
+
+    Route::post('/coupons/store', [CouponController::class, 'store'])->name('coupons-store');
+
+    Route::get('couponss/{id}/edit', [CouponController::class, 'edit'])->name('coupons-edit');
+
+    Route::post('/coupons/{id}/update', [CouponController::class, 'update'])->name('coupons-update');
+
+    Route::get('/coupons/{id}/destroy', [CouponController::class, 'destroy'])->name('coupons-destroy');
+
 
     Route::get('/notifications', [MainController::class, 'notifications']);
 

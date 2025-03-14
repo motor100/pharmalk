@@ -27,7 +27,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button class="submit-btn">{{ __('Сохранить') }}</x-primary-button>
+            <x-primary-button class="submit-btn primary-btn">{{ __('Сохранить') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
                 <p

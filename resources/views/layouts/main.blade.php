@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title', 'Личный кабинет')</title>
   <meta name="robots" content="noindex, nofollow">
+  @yield('style')
   @vite(['resources/sass/main.scss'])
 </head>
 
@@ -78,9 +79,8 @@
     </div>
   </div>
 
-
-  queue('name', 'value', 10)
-
+  @yield('script')
   @vite(['resources/js/main.js'])
+
 </body>
 </html>

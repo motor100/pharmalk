@@ -29,16 +29,6 @@ class MainController extends Controller
     }
 
     /**
-     * Купоны
-     * 
-     * @return Illuminate\View\View
-     */   
-    public function coupons(): View
-    {
-        return view('coupons');
-    }
-
-    /**
      * Уведомления
      * 
      * @return Illuminate\View\View
