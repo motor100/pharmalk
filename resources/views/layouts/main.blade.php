@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title', 'Личный кабинет')</title>
   <meta name="robots" content="noindex, nofollow">
+  <link rel="shortcut icon" href="{{ asset('/img/favicon.svg') }}" type="image/x-icon">
   @yield('style')
   @vite(['resources/sass/main.scss'])
 </head>
