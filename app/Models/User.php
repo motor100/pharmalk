@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    /** @use SoftDeletes<\Database\Eloquent\SoftDeletes> */
+    use HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +21,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'role_id',
         'name',
         'email',
         'password',
@@ -35,6 +38,17 @@ class User extends Authenticatable
     ];
 
     /**
+     * Один к одному
+     * Один пользователь имеет одну роль
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function role(): HasOne
+    {
+        return $this->hasOne(Role::class, 'id', 'role_id');
+    }
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -46,16 +60,5 @@ class User extends Authenticatable
             'password' => 'hashed',
             'last_login_at' => 'datetime',
         ];
-    }
-
-    /**
-     * Один к одному
-     * Один пользователь имеет одну роль
-     * 
-     * @return Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function role(): HasOne
-    {
-        return $this->hasOne(Role::class, 'id');
     }
 }

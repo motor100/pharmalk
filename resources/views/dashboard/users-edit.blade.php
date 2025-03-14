@@ -16,7 +16,7 @@
     </div>
   @endif
 
-  <form class="form mb-5" action="{{ route('users-update') }}" method="post">
+  <form class="form mb-5" action="{{ route('users-update', $user->id) }}" method="post">
     <div class="form-group mb-3">
       <label for="name" class="form-label">Имя</label>
       <input type="text" class="form-control" name="name" id="name" minlength="3" maxlength="20" required value="{{ $user->name }}">
@@ -29,11 +29,10 @@
       <label for="role_id" class="form-label">Роль</label>
       <select name="role_id" id="role_id" class="form-select d-block">
         @foreach($roles as $role)
-          <option value="{{ $role->id }}" {{ $role->id == $user->roles[0]->id ? "selected" : "" }}>{{ $role->name_cyr }}</option>
+          <option value="{{ $role->id }}" {{ $role->id == $user->role->id ? "selected" : "" }}>{{ $role->name_cyr }}</option>
         @endforeach
       </select>
     </div>
-    <input type="hidden" name="id" value="{{ $user->id }}">
 
     @csrf
     <button type="submit" class="btn btn-primary">Обновить</button>
@@ -57,7 +56,7 @@
 </div>
 
 <script>
-  const menuItem = 8;
+  const menuItem = 0;
 </script>
 
 @endsection

@@ -4,13 +4,7 @@ use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
-
-// use App\Http\Controllers\Admin\MainSliderController;
-// use App\Http\Controllers\Admin\TestimonialController;
-// use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProfileController;
-// use App\Http\Controllers\Admin\ProductController;
-// use App\Http\Controllers\Admin\SubcategoryController;
 
 
 /*
@@ -66,7 +60,7 @@ Route::prefix('admin')->group(static function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 
         // Users
-        Route::get('/users', [UserController::class, 'index']);
+        Route::get('/users', [UserController::class, 'index'])->name('users');
 
         Route::get('/users/create', [UserController::class, 'create'])->name('users-create');
 
@@ -76,7 +70,7 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users-edit');
 
-        Route::post('/users/update', [UserController::class, 'update'])->name('users-update');
+        Route::post('/users/{id}/update', [UserController::class, 'update'])->name('users-update');
 
         Route::get('/users/{id}/destroy', [UserController::class, 'destroy'])->name('users-destroy');
 

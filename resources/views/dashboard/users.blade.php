@@ -26,7 +26,7 @@
       <tbody>
         @foreach($users as $user)
           <tr>
-            <td class="hidden-mobile">{{ $user->id }}</td>
+            <td class="hidden-mobile">{{ $loop->index + 1 }}</td>
             <td>
               <a href="{{ route('users-show', $user->id) }}" class="title-link">{{ $user->name }}</a>
             </td>
@@ -38,8 +38,7 @@
               <a href="{{ route('users-edit', $user->id) }}" class="btn btn-primary">
                 <i class="fas fa-pen"></i>
               </a>
-              <!-- <button type="button" class="btn btn-danger del-btn" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-route="{{-- route('users-destroy', $user->id) --}}"> -->
-              <button type="button" class="btn btn-danger del-btn">
+              <button type="button" class="btn btn-danger del-btn" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-route="{{ route('users-destroy', $user->id) }}">
                 <i class="fas fa-trash"></i>
               </button>
             </td>
@@ -54,7 +53,7 @@
 @include('dashboard.modal')
 
 <script>
-  const menuItem = 8;
+  const menuItem = 0;
 </script>
 
 @endsection

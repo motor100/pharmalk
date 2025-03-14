@@ -83,7 +83,6 @@
               <div class="user-image">
                 <i class="far fa-user"></i>
               </div>
-              <!-- <div class="user-name">{{-- Auth::guard('admin')->user()->name --}}</div> -->
               <div class="user-name">{{ Auth::user()->name }}</div>
             </div>
           </div>
@@ -116,7 +115,6 @@
 
   @yield('script')
   <script src="{{ asset('/adminpanel/js/template.js') }}"></script>
-  <!-- <script src="{{ asset('/adminpanel/js/dashboard.js') }}"></script> -->
   @vite(['resources/js/dashboard.js'])
 
 </body>

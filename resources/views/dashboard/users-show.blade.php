@@ -6,6 +6,7 @@
 
 <div class="dashboard-content">
 
+  <p>id: {{ $user->id }}</p>
   <p>Имя: {{ $user->name }}</p>
   <p>Email: {{ $user->email }}</p>
   <p>Роль: {{ $user->role->name_cyr }}</p>
@@ -20,7 +21,7 @@
 </div>
 
 <script>
-  const menuItem = 8;
+  const menuItem = 0;
 </script>
 
 @endsection

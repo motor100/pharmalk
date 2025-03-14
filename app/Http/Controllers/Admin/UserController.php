@@ -21,7 +21,7 @@ class UserController extends Controller
     {   
         $users = User::all();
 
-        return view('dashboard.users', compact('users'));
+        return view("dashboard.users", compact("users"));
     }
 
     /**
@@ -31,7 +31,7 @@ class UserController extends Controller
     {   
         $roles = Role::All();
 
-        return view('dashboard.users-create', compact('roles'));
+        return view("dashboard.users-create", compact("roles"));
     }
 
     /**
@@ -40,25 +40,26 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|alpha|min:3|max:20',
-            'email' => 'required|unique:users|min:3|max:40',
-            'role_id' => 'required',
-            'password' => ['required', Password::defaults(), 'confirmed'],
+            "name" => "required|alpha|min:3|max:20",
+            "email" => "required|unique:users|min:3|max:40",
+            "role_id" => "required",
+            "password" => ["required", Password::defaults(), "confirmed"],
         ]);
 
         $user_id = User::insertGetId([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'email_verified_at' => now(),
-            'password' => Hash::make($validated['password']),
-            'remember_token' => NULL,
-            'created_at' => now(),
-            'updated_at' => now()
+            "role_id" => $validated["role_id"],
+            "name" => $validated["name"],
+            "email" => $validated["email"],
+            "email_verified_at" => now(),
+            "password" => Hash::make($validated["password"]),
+            "remember_token" => NULL,
+            "created_at" => now(),
+            "updated_at" => now()
         ]);
 
-        DB::insert('insert into users_roles (user_id, role_id) values (?, ?)', [$user_id, $validated["role_id"]]);
+        // DB::insert("insert into users_roles (user_id, role_id) values (?, ?)", [$user_id, $validated["role_id"]]);
 
-        return redirect('/dashboard/users')->with('status', 'Добавлено');
+        return redirect()->route("users");
     }
 
     /**
@@ -72,7 +73,7 @@ class UserController extends Controller
             return abort(404);
         }
 
-        return view('dashboard.users-show', compact('user'));
+        return view("dashboard.users-show", compact("user"));
     }
 
     /**
@@ -89,52 +90,45 @@ class UserController extends Controller
         $auth_user = Auth::user();
 
         if($user->id == $auth_user->id) {
-            return redirect('/profile');
+            return redirect("/profile");
         } else {
 
             $roles = Role::All();
 
-            return view('dashboard.users-edit', compact('user', 'roles'));
+            return view("dashboard.users-edit", compact("user", "roles"));
         }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, string $id)
     {
         $validated = $request->validate([
-            'id' => 'required',
-            'name' => 'required|alpha|min:3|max:20',
-            'role_id' => 'required',
+            "role_id" => "required",
+            "name" => "required|alpha|min:3|max:20",
+            "email" => "required|min:3|max:100",
         ]);
 
-        $email = $request->input("email");
-
-        $user = User::find($validated["id"]);
+        $user = User::find($id);
  
         // Валидация и проверка на уникальный email
-        if ($user->email != $email) {
+        if ($user->email != $validated["email"]) {
             $request->validate([
-                'email' => 'required|unique:users|min:3|max:40',
+                "email" => "required|unique:users|min:3|max:40",
             ]);
             $user->email_verified_at = null;
             $user->save();
         }
 
         $user->update([
+            "role_id" => $validated["role_id"],
             "name" => $validated["name"],
-            "email" => $email,
+            "email" => $validated["email"],
             "updated_at" => now()
         ]);
 
-        DB::table('users_roles')
-                ->where('user_id', $validated["id"])
-                ->update([
-                    'role_id' => $validated["role_id"]
-                ]);
-
-        return redirect('/dashboard/users')->with('status', 'Обновлено');
+        return redirect()->back();
     }
 
     /**
@@ -149,8 +143,8 @@ class UserController extends Controller
         }
 
         $user->delete();
-
-        return redirect('/dashboard/users');
+        
+        return redirect()->route("users");
     }
 
     /**
@@ -159,16 +153,16 @@ class UserController extends Controller
     public function password(Request $request)
     {
         $validated = $request->validate([
-            'id' => 'required',
-            'password' => ['required', Password::defaults(), 'confirmed'],
+            "id" => "required",
+            "password" => ["required", Password::defaults(), "confirmed"],
         ]);
 
-        User::where('id', $validated["id"])
+        User::where("id", $validated["id"])
             ->update([
-                'password' => Hash::make($validated["password"]),
-                'updated_at' => now()
+                "password" => Hash::make($validated["password"]),
+                "updated_at" => now()
             ]);
 
-        return redirect('/dashboard/users')->with('status', 'Обновлено');
+        return redirect("/dashboard/users")->with("status", "Обновлено");
     }
 }
