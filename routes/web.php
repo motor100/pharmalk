@@ -19,18 +19,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/orders', [MainController::class, 'orders']);
 
-    // Coupons
-    Route::get('/coupons', [CouponController::class, 'index'])->name('coupons');
+    // Coupon
+    Route::get('/coupon', [CouponController::class, 'index'])->name('coupon');
 
-    Route::get('/coupons/create', [CouponController::class, 'create'])->name('coupons-create');
+    Route::get('/coupon/create', [CouponController::class, 'create'])->name('coupon-create');
 
-    Route::post('/coupons/store', [CouponController::class, 'store'])->name('coupons-store');
+    Route::post('/coupon/store', [CouponController::class, 'store'])->name('coupon-store');
 
-    Route::get('couponss/{id}/edit', [CouponController::class, 'edit'])->name('coupons-edit');
+    Route::get('coupon/{id}/edit', [CouponController::class, 'edit'])->name('coupon-edit');
 
-    Route::post('/coupons/{id}/update', [CouponController::class, 'update'])->name('coupons-update');
+    Route::post('/coupon/{id}/update', [CouponController::class, 'update'])->name('coupon-update');
 
-    Route::get('/coupons/{id}/destroy', [CouponController::class, 'destroy'])->name('coupons-destroy');
+    Route::get('/coupon/{id}/destroy', [CouponController::class, 'destroy'])->name('coupon-destroy');
 
 
     Route::get('/notifications', [MainController::class, 'notifications']);

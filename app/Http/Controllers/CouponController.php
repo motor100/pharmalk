@@ -20,17 +20,21 @@ class CouponController extends Controller
     public function index(): View
     {
         $table_posts = config("wp.wp_table_prefix") . "posts";
+
+        $user = Auth::user();
+
+        $user_id = $user->id + 10000;
         
-        $coupons = DB::connection("mysql2")
+        $coupon = DB::connection("mysql2")
                     ->table($table_posts)
-                    ->where("post_author", 100)
+                    ->where("post_author", $user_id)
                     ->select(["ID", "post_title", "post_excerpt"])
-                    ->get();
+                    ->first();
 
-        
-        $table_postmeta = config("wp.wp_table_prefix") . "postmeta";
+        // Если есть купон, то получаю его meta
+        if ($coupon) {
+            $table_postmeta = config("wp.wp_table_prefix") . "postmeta";
 
-        foreach($coupons as $coupon) {
             $coupon_metas = DB::connection("mysql2")
                             ->table($table_postmeta)
                             ->where("post_id", $coupon->ID)
@@ -40,11 +44,10 @@ class CouponController extends Controller
             foreach($coupon_metas as $meta) {
                 $key = $meta->meta_key;
                 $coupon->$key = $meta->meta_value;
-                // dd($meta->meta_key);
             }
         }
-
-        return view("coupons", compact("coupons"));
+        
+        return view("coupon", compact("coupon"));
     }
 
     /**
@@ -54,7 +57,19 @@ class CouponController extends Controller
      */
     public function create(): View
     {
-        return view("coupons-create");
+        $table_posts = config("wp.wp_table_prefix") . "posts";
+
+        $user = Auth::user();
+
+        $user_id = $user->id + 10000;
+        
+        $coupon = DB::connection("mysql2")
+                    ->table($table_posts)
+                    ->where("post_author", $user_id)
+                    ->select(["ID", "post_title", "post_excerpt"])
+                    ->first();
+        
+        return view("coupon-create", compact("coupon"));
     }
 
     /**
@@ -68,15 +83,39 @@ class CouponController extends Controller
             "stop_date" => "nullable",
         ]);
 
-        // Вставка во внешнюю БД таблица posts
-        $table_posts = config("wp.wp_table_prefix") . "posts";
-
         $user = Auth::user();
 
-        $title = "lk_" . $user->id . "_" . date("Hi") . Str::random(3);
+        $user_id = $user->id + 10000;
+
+        $table_posts = config("wp.wp_table_prefix") . "posts";
+        $table_postmeta = config("wp.wp_table_prefix") . "postmeta";
+
+        // Проверка, если уже есть купон, то удаляю его и его meta описание
+        $coupon = DB::connection("mysql2")
+                    ->table($table_posts)
+                    ->where("post_author", $user_id)
+                    ->select(["ID", "post_title", "post_excerpt"])
+                    ->first();
+        
+        if ($coupon) {
+            // Удаление meta описания таблица postmeta
+            DB::connection("mysql2")
+                ->table($table_postmeta)
+                ->where("post_id", $coupon->ID)
+                ->delete();
+
+            // Удаление купона таблица posts
+            DB::connection("mysql2")
+                ->table($table_posts)
+                ->where("post_author", $user_id)
+                ->delete();
+        }
+
+        // Вставка во внешнюю БД таблица posts
+        $title = "k" . $user->id . "_" . date("Hi") . Str::random(3);
 
         $coupon_array = [
-            "post_author" => 100,
+            "post_author" => $user_id,
             "post_date" => now(),
             "post_date_gmt" => now(),
             "post_content" => "",
@@ -107,6 +146,14 @@ class CouponController extends Controller
         // Вставка во внешнюю БД таблица postmeta
         $table_postmeta = config("wp.wp_table_prefix") . "postmeta";
 
+        // Срок действия купона. Если его нет, то 31.12 текущего года
+        if ($validated["stop_date"]) {
+            $date = Carbon::createFromFormat('d.m.Y', $validated["stop_date"])->format('Y-m-d');
+        } else {
+            $current_year = date('Y');
+            $date = $current_year . "-12-31";
+        }
+
         $meta_array = [
             [
                 "post_id" => $post_id,
@@ -116,7 +163,7 @@ class CouponController extends Controller
             [
                 "post_id" => $post_id,
                 "meta_key" => "coupon_amount",
-                "meta_value" => "10"
+                "meta_value" => $validated["amount"],
             ],
             [
                 "post_id" => $post_id,
@@ -126,7 +173,7 @@ class CouponController extends Controller
             [
                 "post_id" => $post_id,
                 "meta_key" => "expiry_date",
-                "meta_value" => $carbon = Carbon::createFromFormat('d.m.Y', $validated["stop_date"])->format('Y-m-d'),
+                "meta_value" => $date,
             ],
             [
                 "post_id" => $post_id,
@@ -149,7 +196,7 @@ class CouponController extends Controller
             ->table($table_postmeta)
             ->insert($meta_array);
         
-        return redirect()->route("coupons");
+        return redirect()->route("coupon");
     }
 
     /**

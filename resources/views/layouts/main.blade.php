@@ -49,7 +49,7 @@
               <img class="nav-item__image" src="/img/ticket.svg" alt="">
               <div class="nav-item__text">Купоны</div>
               <img src="/img/arrow-right.svg" class="arrow-right" alt="">
-              <a href="/coupons" class="full-link"></a>
+              <a href="/coupon" class="full-link"></a>
             </div>
             <div class="nav-item">
               <img class="nav-item__image" src="/img/bell.svg" alt="">

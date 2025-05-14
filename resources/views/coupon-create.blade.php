@@ -11,11 +11,11 @@
 <div class="coupons-page">
 
   <div class="page-title-wrapper">
-    <div class="page-title">Добавить купон</div>
+    <div class="page-title">{{ $coupon ? 'Обновить купон' : 'Добавить купон' }}</div>
     @include('logout-form')
   </div>
 
-  <form class="form" action="{{ route('coupons-store') }}" method="post">
+  <form class="form" action="{{ route('coupon-store') }}" method="post">
     <div class="form-group">
       <label for="description" class="form-label">Описание</label>
       <textarea name="description" id="description" class="form-control textarea">{{ old('description') }}</textarea>
@@ -26,10 +26,10 @@
     </div>
     <div class="form-group">
       <label for="stop_date" class="form-label">Дата окончания</label>
-      <input type="text" name="stop_date" id="stop_date" class="form-control datepicker" required value="{{ old('stop_date') }}">
+      <input type="text" name="stop_date" id="stop_date" class="form-control datepicker" value="{{ old('stop_date') }}">
     </div>
     @csrf
-    <button class="primary-btn submit-btn">Добавить</button>
+    <button class="primary-btn submit-btn">{{ $coupon ? 'Обновить купон' : 'Добавить купон' }}</button>
   </form>
 
   <style>
