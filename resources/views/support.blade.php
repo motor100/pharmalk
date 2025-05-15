@@ -20,7 +20,7 @@
 </div>
 
 <script>
-  const menuItem = 6;
+  const menuItem = 5;
 </script>
 
 @endsection

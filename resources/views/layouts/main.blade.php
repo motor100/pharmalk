@@ -30,31 +30,53 @@
             <div class="nav-item">
               <img class="nav-item__image" src="/img/home.svg" alt="">
               <div class="nav-item__text">Главная</div>
-              <img src="/img/arrow-right.svg" class="arrow-right" alt="">
+              <div class="arrow-right">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 5.25L19.25 14L10.5 22.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <a href="/" class="full-link"></a>
             </div>
             <div class="nav-item">
               <img class="nav-item__image" src="/img/user.svg" alt="">
               <div class="nav-item__text">Мой профиль</div>
-              <img src="/img/arrow-right.svg" class="arrow-right" alt="">
+              <div class="arrow-right">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 5.25L19.25 14L10.5 22.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <a href="/profile" class="full-link"></a>
             </div>
+            <!-- 
             <div class="nav-item">
               <img class="nav-item__image" src="/img/clock.svg" alt="">
               <div class="nav-item__text">История заказов</div>
-              <img src="/img/arrow-right.svg" class="arrow-right" alt="">
+              <div class="arrow-right">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 5.25L19.25 14L10.5 22.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <a href="/orders" class="full-link"></a>
             </div>
+             -->
             <div class="nav-item">
               <img class="nav-item__image" src="/img/ticket.svg" alt="">
               <div class="nav-item__text">Купоны</div>
-              <img src="/img/arrow-right.svg" class="arrow-right" alt="">
+              <div class="arrow-right">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 5.25L19.25 14L10.5 22.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <a href="/coupon" class="full-link"></a>
             </div>
             <div class="nav-item">
               <img class="nav-item__image" src="/img/bell.svg" alt="">
               <div class="nav-item__text">Уведомления</div>
-              <img src="/img/arrow-right.svg" class="arrow-right" alt="">
+              <div class="arrow-right">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 5.25L19.25 14L10.5 22.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <a href="/notifications" class="full-link"></a>
             </div>
           </div>

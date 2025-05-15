@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="coupons-page">
+<div class="coupon-page">
 
   <div class="page-title-wrapper">
     <div class="page-title">{{ $coupon ? 'Обновить купон' : 'Добавить купон' }}</div>
@@ -32,44 +32,10 @@
     <button class="primary-btn submit-btn">{{ $coupon ? 'Обновить купон' : 'Добавить купон' }}</button>
   </form>
 
-  <style>
-    .form-label {
-      display: block;
-    }
-    .form-control {
-      display: block;
-      width: 100%;
-      height: 30px;
-      padding: 5px 10px;
-      border: 1px solid #000;
-      border-radius: 5px;
-      font-family: inherit;
-    }
-    .input-number {
-      -webkit-appearance: textfield;
-      -moz-appearance: textfield;
-      appearance: textfield;
-    }
-    .input-number::-webkit-inner-spin-button,
-    .input-number::-webkit-outer-spin-button {
-      margin: 0;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
-    .textarea {
-      height: 70px;
-      resize: none;
-    }
-    .submit-btn {
-      margin: 30px 0;
-    }
-  </style>
-
 </div>
 
 <script>
-  const menuItem = 3;
+  const menuItem = 2;
 </script>
 
 @endsection

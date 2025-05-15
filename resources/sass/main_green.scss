@@ -96,10 +96,10 @@ p {
   padding: 0;
   border: none;
   border-radius: 15px;
-  background-color: $darkbluecolor;
+  background-color: $wildwillowcolor;
   font-family: inherit;
   font-size: 18px;
-  color: $nerocolor;
+  color: $textcolor;
   justify-content: center;
   align-items: center;
 }
@@ -110,7 +110,7 @@ p {
   height: 100%;
   padding: 60px 40px;
   border-radius: 30px;
-  background-color: $darkbluecolor;
+  background-color: $voodoocolor;
   flex-shrink: 0;
   transition: width .2s, padding .2s;
   &.active {
@@ -169,7 +169,7 @@ p {
     align-items: center;
   }
   .nav-item.active {
-    background-color: $burgundycolor;
+    background-color: $wildwillowcolor;
   }
   .nav-item__image {
     width: 28px;
@@ -185,28 +185,17 @@ p {
   &.active .nav-item__text {
     display: none;
   }
-  .nav-item.active .nav-item__text {
-    color: $nerocolor;
-  }
   .arrow-right {
     position: absolute;
     top: 0;
     right: 30px;
     bottom: 0;
     display: none;
-    width: 28px;
-    height: 28px;
     margin: auto 0;
     transition: right .2s;
   }
-  .arrow-right svg path {
-    stroke: #212529;
-  }
   .nav-item.active .arrow-right {
     display: block;
-  }
-  .nav-item.active .arrow-right svg path {
-    stroke: $nerocolor;
   }
   &.active .nav-item.active .arrow-right {
     display: none;
@@ -287,7 +276,7 @@ p {
   //   padding: 0;
   //   border: none;
   //   border-radius: 15px;
-  //   background-color: $burgundycolor;
+  //   background-color: $wildwillowcolor;
   //   font-family: inherit;
   //   font-size: 18px;
   // }

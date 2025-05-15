@@ -68,20 +68,20 @@ body {
     width: 400px;
     height: 53px;
     margin: 0;
-    background-color: #C2D279;
-    color: #222222;
+    background-color: #294060;
+    color: #fff;
 }
 .primary-btn:hover,
 .primary-btn:active,
 .primary-btn:focus {
-    background-color: #C2D279 !important;
+    background-color: #294060 !important;
 }
 .secondary-btn {
     display: flex;
     width: 400px;
     height: 53px;
     margin: 0;
-    border: 1px solid #C2D279;
+    border: 1px solid #294060;
     border-radius: 6px;
     justify-content: center;
     align-items: center;

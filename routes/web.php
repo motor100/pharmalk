@@ -43,6 +43,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/ajax/aside-nav-set-active', [AjaxController::class, 'aside_nav_set_active']);
 
     Route::get('/ajax/aside-nav-remove-active', [AjaxController::class, 'aside_nav_remove_active']);
+
+    Route::get('/ajax/orders-summ-calc', [AjaxController::class, 'orders_summ_calc']);
 });
 
 // Route::get('/', [MainController::class, 'home'])->name('home');

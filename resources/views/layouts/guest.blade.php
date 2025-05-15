@@ -13,7 +13,7 @@
     <body class="antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center py-8">
             <div class="logo">
-                <img src="/img/natura-pharma-logo.svg" alt="">
+                <img src="/img/biosalts-logo.png" alt="">
             </div>
             <div class="title">Добро пожаловать на страницу<br>входа в личный кабинет</div>
             <div class="subtitle">введите свои данные выданные ранее администратором</div>
